@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Welcome from './welcome/Welcome';
 import Adopt from './adopt/Adopt';
+import Pets from './pets/Pets';
 
 class App extends Component {
   renderRoutes() {
@@ -9,6 +10,7 @@ class App extends Component {
       <>
         <Route exact path={'/'} component={Welcome} />
         <Route path={'/adopt'} component={Adopt} />
+        <Route path={'/pets'} component={Pets} />
       </>
     );
   };

@@ -7,17 +7,23 @@ class Adopt extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      people: "",
+      people: [],
       cat: "",
       dog: ""
     };
   };
 
   componentDidMount() {
+    AdoptionApiService.getPeople()
+    .then(this.setPeople)
     AdoptionApiService.getCat()
       .then(this.setCat)
     AdoptionApiService.getDog()
       .then(this.setDog)
+  };
+
+  setPeople = people => {
+    this.setState({ people });
   };
 
   setCat = cat => {
@@ -28,15 +34,35 @@ class Adopt extends Component {
     this.setState({ dog });
   };
 
-  render() {
-    let { cat, dog } = this.state;
+  figureQueue = (people) => {
+    let person = "";
+    let queue = [];
+    for (let i = 0; i < people.length; i++) {
+      if (i === 0) {
+        person = people[i];
+      } else {
+        queue.push(people[i] + ' | ');
+      };
+    };
+    return (
+      <section className='order'>
+        <h3>First in queue: {person}</h3>
+        <div className='queue'>
+          <h5>The rest of the queue: {queue}</h5>
+        </div>
+      </section>
+    )
+  };
 
+  render() {
+    let { people, cat, dog } = this.state;
+    console.log('people in line', people)
+    console.log('my cats', cat[0])
 
     return <div>
       <Link to='/'><h1>Petful</h1></Link>
-      <h3>Currently in Queue: Barb</h3>
-      <h4>Next in Queue: Bubbles</h4>
-      <br />
+      {this.figureQueue(people)}
+      <Link to='/pets'><h5>All Pets</h5></Link>
       <section className='adopter'>
         <div className='cats'>
           <h2>Adoptable Cat</h2>
