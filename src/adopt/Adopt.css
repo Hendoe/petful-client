@@ -12,6 +12,14 @@
   flex: 1
 }
 
-button {
-  margin-bottom: 420px;
+ul {
+  list-style-type: none;
+}
+
+.adoption-pic {
+  height: 32rem;
+  width: 28rem;
+  border: #18a837;
+  border-style: solid;
+  border-width: 2px;
 }
