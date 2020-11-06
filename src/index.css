@@ -1,0 +1,9 @@
+body {
+  background-size: contain;
+  background-image: radial-gradient(#03f8cf, #139dd3);
+  text-align: center;
+}
+
+a {
+  color: #000000;
+}

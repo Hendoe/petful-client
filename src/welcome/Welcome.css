@@ -1,0 +1,12 @@
+.welcome {
+  height: 36rem;
+  width: 32rem;
+  border: #18a837;
+  border-style: solid;
+  border-width: 2px;
+}
+
+button {
+  height: 4rem;
+  width: 8rem;
+}

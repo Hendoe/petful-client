@@ -1,0 +1,17 @@
+.adopter {
+  display: flex;
+  flex: 3;
+  flex-direction: row;
+}
+
+.cats {
+  flex: 1;
+}
+
+.dogs {
+  flex: 1
+}
+
+button {
+  margin-bottom: 420px;
+}
